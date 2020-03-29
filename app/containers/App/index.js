@@ -13,47 +13,25 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import { hot } from 'react-hot-loader/root';
-import ReposManager from 'containers/ReposManager';
 import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-
-import GlobalStyle from '../../global-styles';
+import H1 from 'components/H1';
 
 const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
-  display: flex;
-  min-height: 100%;
-  padding: 0 16px;
-  flex-direction: column;
+  text-align: center;
+  margin-top: 50px;
+  color: rgba(49,32,24,0.64);
 `;
 
 function App() {
   return (
     <AppWrapper>
-      <Helmet
-        titleTemplate="%s - React Boilerplate"
-        defaultTitle="React Boilerplate"
-      >
-        <meta name="description" content="A React Boilerplate application" />
+      <Helmet defaultTitle="redux-saga-wizard">
+        <meta name="description" content="Redux Saga Wizard" />
       </Helmet>
-
-      <Header />
-
-      <ReposManager />
-
+      <H1>Welcome to redux-saga-wizard</H1>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
-        <Route component={NotFoundPage} />
       </Switch>
-
-      <Footer />
-
-      <GlobalStyle />
     </AppWrapper>
   );
 }
