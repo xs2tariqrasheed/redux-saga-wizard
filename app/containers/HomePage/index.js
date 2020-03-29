@@ -1,31 +1,44 @@
-/*
- * HomePage
- *
- * This is the first thing users see of our App, at the '/' route
- *
- */
-
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useInjectReducer } from 'redux-injectors';
-import H1 from 'components/H1';
+import { Table, Row, Col } from 'antd';
+import { useSelector, useDispatch } from 'react-redux';
+import { useInjectReducer, useInjectSaga } from 'redux-injectors';
 
-import { reducer } from './slice';
+import { selectUsers, selectUsersLoading } from './selectors';
+import { fetchUsersRequest, reducer } from './slice';
+import saga from './saga';
+
+const key = 'home';
 
 export default function HomePage() {
-  useInjectReducer({ key: 'home', reducer });
-  useEffect(() => {}, []);
+  useInjectReducer({ key, reducer });
+  useInjectSaga({ key, saga });
+  const dispatch = useDispatch();
+
+  const users = useSelector(selectUsers);
+  const usersLoading = useSelector(selectUsersLoading);
+
+  useEffect(() => {
+    dispatch(fetchUsersRequest());
+  }, []);
 
   return (
-    <article>
-      <Helmet>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="A React Boilerplate application homepage"
-        />
-      </Helmet>
-      <H1>Welcome to redux-saga-wizard lo fer</H1>
-    </article>
+    <Row>
+      <Col span={5} offset={2}>
+        <div style={{ background: '#fff' }}>
+          <Table
+            loading={usersLoading}
+            size="small"
+            pagination={false}
+            dataSource={users}
+            columns={[
+              {
+                title: 'Users',
+                dataIndex: 'name',
+              },
+            ]}
+          />
+        </div>
+      </Col>
+    </Row>
   );
 }

@@ -1,13 +1,14 @@
-/**
- * Homepage selectors
- */
-
 import { createSelector } from '@reduxjs/toolkit';
 import { initialState } from './slice';
 
 const selectHome = state => state.home || initialState;
 
-const makeSelectUsername = () =>
-  createSelector(selectHome, homeState => homeState.username);
+export const selectUsers = createSelector(
+  [selectHome],
+  homeState => homeState.users.data,
+);
 
-export { selectHome, makeSelectUsername };
+export const selectUsersLoading = createSelector(
+  [selectHome],
+  homeState => homeState.users.loading,
+);

@@ -66,6 +66,7 @@ module.exports = options => ({
               javascriptEnabled: true,
               modifyVars: {
                 'primary-color': '#000000',
+                'body-background': '#f0f2f5',
               },
             },
           },
