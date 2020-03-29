@@ -8,6 +8,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useInjectReducer } from 'redux-injectors';
+import H1 from 'components/H1';
 
 import { reducer } from './slice';
 
@@ -24,6 +25,7 @@ export default function HomePage() {
           content="A React Boilerplate application homepage"
         />
       </Helmet>
+      <H1>Welcome to redux-saga-wizard lo fer</H1>
     </article>
   );
 }
