@@ -1,7 +1,3 @@
-/**
- * Create the store with dynamic reducers
- */
-
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { routerMiddleware } from 'connected-react-router';
 import { createInjectorsEnhancer, forceReducerReload } from 'redux-injectors';

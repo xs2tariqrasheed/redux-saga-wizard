@@ -51,6 +51,7 @@ export default function HomePage() {
       <Col span={5} offset={2}>
         <div style={{ background: '#fff', marginTop: 20 }}>
           <Table
+            key="id"
             loading={usersLoading}
             size="small"
             pagination={false}
@@ -59,6 +60,7 @@ export default function HomePage() {
               {
                 title: usersLoading ? 'Fetching...' : 'USERS',
                 dataIndex: 'name',
+                key: 'name',
               },
             ]}
           />

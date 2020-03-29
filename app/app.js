@@ -24,7 +24,7 @@ const initialState = {};
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 
-const ConnectedApp = props => (
+const ConnectedApp = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <HelmetProvider>
