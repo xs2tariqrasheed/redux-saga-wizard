@@ -28,7 +28,7 @@ function App() {
         <meta name="description" content="Redux Saga Wizard" />
       </Helmet>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route path="/" component={HomePage} />
       </Switch>
     </AppWrapper>
   );
