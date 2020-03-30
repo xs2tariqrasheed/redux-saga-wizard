@@ -2,10 +2,10 @@
 
 _This project is under development._
 
-###Purpose:
+### Purpose:
 To get full control on the application state.
 
-###Features in first release:
+### Features in first release:
 - Recording actions
 - Dispatching actions automatically and periodically
 - Register/Unregister actions at any time
@@ -14,17 +14,17 @@ To get full control on the application state.
 - saga util that will keep try to do network call if it's get failed
 - navigate to different states of app etc... 
 
-###Development Guide:
+### Development Guide:
 
 Make sure you've node version 12.16.1 or higher.
 
-#####Step-1:
+##### Step-1:
     git clone https://github.com/xs2tariqrasheed/redux-saga-wizard.git
 
-#####Step-2:
+##### Step-2:
     npm install
 
-#####Step-3:
+##### Step-3:
     npm start
     
  
