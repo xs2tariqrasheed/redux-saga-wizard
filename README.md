@@ -1,15 +1,30 @@
-Welcome to redux-saga-wizard
+# Welcome to Redux Saga Wizard
 
-This project is under development.
+_This project is under development._
 
-vision: Programmer can control the state of app easily.
+###Purpose:
+To get full control on the application state.
 
-I wanna added following features:
-1- Recording actions
-2- Dispatching actions automatically and periodically
-3- Register/Unregister actions at any time
-4- Jumping to particular state
-5- Undo/Redo state change
-6- saga util that will keep try to do network call if it's get failed
-7- navigate to different states of app
-etc.., 
+###Features in first release:
+- Recording actions
+- Dispatching actions automatically and periodically
+- Register/Unregister actions at any time
+- Jumping to particular state
+- Undo/Redo state change
+- saga util that will keep try to do network call if it's get failed
+- navigate to different states of app etc... 
+
+###Development Guide:
+
+Make sure you've node version 12.16.1 or higher.
+
+#####Step-1:
+    git clone https://github.com/xs2tariqrasheed/redux-saga-wizard.git
+
+#####Step-2:
+    npm install
+
+#####Step-3:
+    npm start
+    
+ 
