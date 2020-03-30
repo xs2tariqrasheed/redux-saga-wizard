@@ -66,6 +66,12 @@ export default function HomePage() {
                 dataIndex: 'name',
                 key: 'name',
               },
+              {
+                title: 'Score',
+                dataIndex: 'score',
+                key: 'score',
+                align: 'right',
+              },
             ]}
           />
         </div>

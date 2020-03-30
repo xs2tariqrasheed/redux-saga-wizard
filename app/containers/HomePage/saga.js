@@ -8,7 +8,17 @@ function* fetchUsers() {
     const response = yield axios.get(
       'https://jsonplaceholder.typicode.com/users',
     );
-    yield put(fetchUsersSuccess(response.data.slice(0, 5)));
+    yield put(
+      fetchUsersSuccess(
+        response.data
+          .slice(0, 5)
+          .map(item => ({
+            ...item,
+            score: parseInt(Math.random() * 100, 10),
+          }))
+          .sort((a, b) => b.score - a.score),
+      ),
+    );
   } catch (e) {
     console.error(e);
   }
