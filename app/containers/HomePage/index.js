@@ -6,7 +6,11 @@ import { useInjectReducer, useInjectSaga } from 'redux-injectors';
 import { selectUsers, selectUsersLoading } from './selectors';
 import { fetchUsersRequest, reducer } from './slice';
 import saga from './saga';
-import wizard from '../../wizard/saga';
+import { wizard } from '../../wizard';
+/* To test the production build, run the following command
+ * npm run build:wizard
+ * and then uncomment the following line and comment the previous line */
+// import { wizard } from '../../wizard/build';
 
 const { Title, Text } = Typography;
 const key = 'home';
